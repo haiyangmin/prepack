@@ -671,7 +671,8 @@ export class ResidualFunctions {
             hasFunctionArg ||
             (firstUsage === undefined || !firstUsage.isNotEarlierThan(insertionPoint)) ||
             this.functionPrototypes.get(functionValue) !== undefined ||
-            hasAnyLeakedIds
+            hasAnyLeakedIds ||
+            true
           ) {
             let callArgs: Array<BabelNodeExpression | BabelNodeSpreadElement> = [t.thisExpression()];
             for (let flatArg of flatArgs) callArgs.push(flatArg);
